@@ -7,7 +7,7 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
-import {UserEntity} from "./user.entity";
+import { UserEntity } from "./user.entity";
 
 @Entity("articles")
 export class ArticleEntity extends BaseEntity {
@@ -27,10 +27,10 @@ export class ArticleEntity extends BaseEntity {
     tags: string
 
     @CreateDateColumn({ name: "created_at" })
-    createdAt: string
+    createdAt: Date
 
     @UpdateDateColumn({ name: "updated_at" })
-    updatedAt: string
+    updatedAt: Date
 
     @ManyToOne(() => UserEntity, item => item.articles)
     @JoinColumn({ name: "user_id" })
