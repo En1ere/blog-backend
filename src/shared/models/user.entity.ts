@@ -8,6 +8,7 @@ import {
     UpdateDateColumn
 } from "typeorm";
 import {ArticleEntity} from "./article.entity";
+import {RefreshTokenEntity} from "./refresh-tokens.entity";
 
 export enum EUserRole {
     admin = 'admin',
@@ -39,4 +40,7 @@ export class UserEntity extends BaseEntity {
 
     @OneToMany(() => ArticleEntity, item => item.author)
     articles: ArticleEntity[]
+
+    @OneToMany(() => RefreshTokenEntity, (item) => item.user)
+    refreshTokens: RefreshTokenEntity[]
 }

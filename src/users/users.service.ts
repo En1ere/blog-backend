@@ -10,6 +10,14 @@ export class UsersService {
         private readonly userRepo: Repository<UserEntity>
     ) {}
 
+    async getUserById(id: number) {
+        return await this.userRepo.findOne({
+            where: {
+                id
+            }
+        })
+    }
+
     async getUserByEmail(email: string) {
         return await this.userRepo.findOne({
             where: {
