@@ -13,6 +13,7 @@ import {RefreshTokenEntity} from "./refresh-tokens.entity";
 export enum EUserRole {
     admin = 'admin',
     user = 'user',
+    moderator = 'moderator'
 }
 
 @Entity("users")
